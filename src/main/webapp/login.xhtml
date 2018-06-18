@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>First project</title>
+    </h:head>
+    <h:body style=" background-color: #DCD0D0;">
+        <h:form id="login_form" style="margin: auto; width: 360px; padding-top: 100px;">
+            <p:panel>
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                        <p:outputLabel value="#{msgs.name_form}"/>  
+                    </f:facet>
+                    <p:outputLabel value="#{msgs.login}"/>
+                    <p:inputText id="username" value="#{login.user}" required="true" requiredMessage="#{msgs.login_required}"/>
+                    <p:outputLabel value="#{msgs.password}"/>
+                    <p:password id="password" value="#{login.pwd}" required="true" requiredMessage="#{msgs.pass_required}"/>
+                </p:panelGrid>
+                <f:facet name="footer">
+                    <p:commandButton id="enterbtn" value="#{msgs.enter}" action="#{login.validateUsernamePassword}" update="login_form"/>
+                    <p:messages style="color:red"/>
+                </f:facet>
+            </p:panel>
+        </h:form>
+        <h:form style="margin: auto; width: 160px; font-size: 150%">
+         <h:commandLink value="#{msgs.link}" action="/public/registration?faces-redirect=true"/>
+        </h:form>
+    </h:body>
+</html>

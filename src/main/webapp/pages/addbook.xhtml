@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Add book</title>
+    </h:head>
+    <h:body  style=" background-color: #DCD0D0;">
+        <h:form>
+            <p:commandLink action="#{login.logout}" value="#{msgs.exit}"/>
+        </h:form>
+        <br/>
+        <h:form id="add_book">
+            <p:panelGrid columns="2">
+                <p:outputLabel value="#{msgs.name}"/>
+                <p:inputText value="#{addBook.name}" required="true" requiredMessage="#{msgs.empty_field_name}"/>
+                <p:outputLabel value="#{msgs.author}"/>
+                <p:inputText value="#{addBook.author}" required="true" requiredMessage="#{msgs.empty_field_author}"/>
+                <p:outputLabel value="#{msgs.page_count}"/>
+                <p:inputText value="#{addBook.pageCount}" required="true" requiredMessage="#{msgs.empty_field_page_count}"/>
+                <p:outputLabel value="#{msgs.genre}"/>
+                <p:inputText value="#{addBook.genre}" required="true" requiredMessage="#{msgs.empty_field_genre}"/>
+                <p:outputLabel value="#{msgs.isbn}"/>
+                <p:inputText value="#{addBook.isbn}" required="true" requiredMessage="#{msgs.empty_field_isbn}"/>
+                <p:outputLabel value="#{msgs.publish_year}"/>
+                <p:inputText value="#{addBook.publishYear}" required="true" requiredMessage="#{msgs.empty_field_publish_year}"/>
+                <p:outputLabel value="#{msgs.publisher}"/>
+                <p:inputText value="#{addBook.publisher}" required="true" requiredMessage="#{msgs.empty_field_publisher}"/>
+            </p:panelGrid>
+            <br/>
+            <p:commandButton id="Addbookbtn" value="#{msgs.add_book_btn}" action="#{addBook.add}" update="add_book"/>
+            <p:messages style="color:red"/>
+        </h:form>
+    </h:body>
+</html>
+
